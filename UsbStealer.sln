@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsbStealer", "UsbStealer\UsbStealer.csproj", "{2A0D1D14-8818-433D-80A7-1F81799CE9BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A0D1D14-8818-433D-80A7-1F81799CE9BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A0D1D14-8818-433D-80A7-1F81799CE9BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A0D1D14-8818-433D-80A7-1F81799CE9BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A0D1D14-8818-433D-80A7-1F81799CE9BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A10705C-79FF-43EA-9748-CC351443760D}
+	EndGlobalSection
+EndGlobal
